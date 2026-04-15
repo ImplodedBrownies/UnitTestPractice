@@ -38,3 +38,21 @@ TEST(PasswordTest, mixed3) {
 	int actual = mixed_3.has_mixed_case("  dD");
 	ASSERT_EQ(true, actual);
 }
+
+TEST(PasswordTest, mixed4) {
+	Password mixed_4;
+	int actual = mixed_4.has_mixed_case("123abC");
+	ASSERT_EQ(true, actual);
+}
+
+TEST(PasswordTest, mixed5) {
+	Password mixed_5;
+	int actual = mixed_5.has_mixed_case("#&Cab");
+	ASSERT_EQ(true, actual);
+}
+
+TEST(PasswordTest, mixed6) {
+	Password mixed_6;
+	int actual = mixed_6.has_mixed_case("-24");
+	ASSERT_EQ(false, actual);
+}
